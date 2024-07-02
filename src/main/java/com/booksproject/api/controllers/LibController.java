@@ -8,7 +8,10 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/books")
+
 public class LibController {
+
+
     @GetMapping
     public ResponseEntity getAllBooks() {
         return ResponseEntity.ok("Deu ok");
