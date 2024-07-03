@@ -37,7 +37,7 @@ public class LibController {
         return ResponseEntity.ok("livro deletado id : "+  data.id());
     }
     @PutMapping
-    public ResponseEntity updateBook(@RequestBody @Valid IdBook data) {
+    public ResponseEntity updateBook(@PathVariable String id, @RequestBody @Valid IdBook data) {
         Lib book = lib.getReferenceById(data.id());
         book.setName(data.name());
         book.setAutor(data.autor());
