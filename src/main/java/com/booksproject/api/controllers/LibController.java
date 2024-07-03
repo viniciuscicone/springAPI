@@ -1,11 +1,10 @@
 package com.booksproject.api.controllers;
 
-import com.booksproject.api.domain.lib.DeleteBook;
+import com.booksproject.api.domain.lib.IdBook;
 import com.booksproject.api.domain.lib.Lib;
 import com.booksproject.api.domain.lib.LibRepository;
 import com.booksproject.api.domain.lib.RequestLib;
 
-import jakarta.persistence.PostUpdate;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -33,15 +32,17 @@ public class LibController {
         return ResponseEntity.ok("livro cadastrado !!");
     }
     @DeleteMapping
-    public ResponseEntity deteteBook(@RequestBody @Valid DeleteBook data) {
+    public ResponseEntity deteteBook(@RequestBody @Valid IdBook data) {
         lib.deleteById(data.id());
         return ResponseEntity.ok("livro deletado id : "+  data.id());
     }
-    @PostUpdate
-    public ResponseEntity updateBook(@RequestBody @Valid RequestLib data) {
-        Lib book = new Lib(data);
+    @PutMapping
+    public ResponseEntity updateBook(@RequestBody @Valid IdBook data) {
+        Lib book = lib.getReferenceById(data.id());
+        book.setName(data.name());
+        book.setAutor(data.autor());
         lib.save(book);
-        return ResponseEntity.ok("livro atualizado : " + data.name() + " - " + data.autor());
+        return ResponseEntity.ok("livro atualizado : " + data.id() + " - "+ data.name() + " - " + data.autor());
     }
 
 }
