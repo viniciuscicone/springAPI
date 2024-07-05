@@ -3,24 +3,24 @@ package com.booksproject.api.domain.lib;
 import jakarta.persistence.*;
 import lombok.*;
 
-@Table(name="library")
-@Entity(name = "library")
+@Table(name="tarefa")
+@Entity(name = "tarefa")
 @EqualsAndHashCode(of = "id")
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class Lib {
+public class TaskClass {
 
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     private String id;
-    private String name;
+    private String task;
     private String autor;
 
 
-    public Lib(RequestLib data) {
-        this.name = data.name();
+    public TaskClass(RequestTask data) {
+        this.task = data.task();
         this.autor = data.autor();
     }
 }

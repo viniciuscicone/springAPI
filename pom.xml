@@ -68,6 +68,16 @@
 	<build>
 		<plugins>
 			<plugin>
+				<groupId>org.flywaydb</groupId>
+				<artifactId>flyway-maven-plugin</artifactId>
+				<version>6.5.1</version>
+				<configuration>
+					<url>jdbc:mysql://localhost:3306/libapplication</url>
+					<user>root</user>
+					<password>1234</password>
+				</configuration>
+			</plugin>
+			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 				<configuration>

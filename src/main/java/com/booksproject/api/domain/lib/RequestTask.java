@@ -1,16 +1,17 @@
 package com.booksproject.api.domain.lib;
-
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.NotNull;
 
-public record IdBook(
+public record RequestTask(
         @NotNull
         @NotBlank
         @NotEmpty
-        String id,
-        String name,
-        String autor
-) {
+        String task,
+        @NotNull
+        @NotBlank
+        @NotEmpty
+        String autor) {
 
 }
+
