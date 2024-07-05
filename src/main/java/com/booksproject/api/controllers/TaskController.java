@@ -2,7 +2,7 @@ package com.booksproject.api.controllers;
 
 import com.booksproject.api.domain.lib.IdTask;
 import com.booksproject.api.domain.lib.TaskClass;
-import com.booksproject.api.domain.lib.TaskRepository;
+import com.booksproject.api.domain.repository.TaskRepository;
 import com.booksproject.api.domain.lib.RequestTask;
 
 import jakarta.validation.Valid;
