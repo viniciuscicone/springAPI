@@ -27,9 +27,11 @@ public class TaskController {
     }
     @PostMapping
     public ResponseEntity postBook(@RequestBody @Valid RequestTask data) {
+
+
         TaskClass book = new TaskClass(data);
         lib.save(book);
-        return ResponseEntity.ok("tarefa cadastrada !!");
+        return ResponseEntity.status(200).body("tarefa cadastrada !!");
     }
     @DeleteMapping
     public ResponseEntity deteteBook(@RequestBody @Valid IdTask data) {
