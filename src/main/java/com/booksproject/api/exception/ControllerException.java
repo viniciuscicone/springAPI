@@ -20,9 +20,7 @@ class ControlerException extends RuntimeException {
 
   /*  @ExceptionHandler(MethodArgumentNotValidException.class)
     public ResponseEntity<GenericException> exception(Exception e) {
-
         GenericException generic = new GenericException(HttpStatus.ACCEPTED, e.getMessage());
-
         return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(generic);
     }*/
 }
