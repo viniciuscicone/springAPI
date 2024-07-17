@@ -25,7 +25,6 @@ public class Task {
     private String id;
 
     private String task;
-
     private String autor;
 
 
