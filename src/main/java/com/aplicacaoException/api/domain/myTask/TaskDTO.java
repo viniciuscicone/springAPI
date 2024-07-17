@@ -9,7 +9,6 @@ import jakarta.validation.constraints.Size;
 
 public record TaskDTO (
 
-
         @NotNull
         @NotBlank
         @NotEmpty(message = "{nome.NotEmpty}")
