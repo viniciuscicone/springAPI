@@ -46,7 +46,7 @@ public class TaskController {
         }
 
         lib.deleteById(data.id());
-        return ResponseEntity.ok("tarefa deletada id : "+  data.id());
+        return ResponseEntity.ok("tarefa deletada id : "+  data);
     }
     @PutMapping
     public ResponseEntity updateBook(@RequestBody @Valid TaskDTO data, @RequestBody @Valid idDTO dataId, Errors errors) {
