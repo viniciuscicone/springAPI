@@ -23,17 +23,9 @@ public class Task {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     private String id;
-    @Valid
-    @NotNull
-    @NotBlank
-    @NotEmpty(message = "Campo invalido")
-    @Size(min = 1, message = "{nome.Size}")
+
     private String task;
-    @Valid
-    @NotNull
-    @NotBlank
-    @NotEmpty(message = "Campo invalido")
-    @Size(min = 1, message = "{nome.Size}")
+
     private String autor;
 
 
