@@ -42,7 +42,7 @@ public class TaskController {
     public ResponseEntity deteteBook(@RequestBody @Valid idDTO data, Errors errors) {
 
         if (errors.hasErrors()) {
-            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(errors.getAllErrors());
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(errors);
         }
 
         lib.deleteById(data.id());
