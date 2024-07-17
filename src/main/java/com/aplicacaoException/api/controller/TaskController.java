@@ -53,7 +53,7 @@ public class TaskController {
         /*  @PathVariable String id        nos parametros*/
 
         if (errors.hasErrors()) {
-            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(errors.getAllErrors());
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(errors);
         }
 
         Task book = lib.getReferenceById(dataId.id());
