@@ -41,9 +41,9 @@ public class TaskController {
     @DeleteMapping
     public ResponseEntity deteteBook(@RequestBody @Valid idDTO data, Errors errors) {
 
-        /*if (errors.hasErrors()) {
+        if (errors.hasErrors()) {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(errors.getAllErrors());
-        }*/
+        }
 
         lib.deleteById(data.id());
         return ResponseEntity.ok("tarefa deletada id : "+  data.id());
