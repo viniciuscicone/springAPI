@@ -23,7 +23,6 @@ public class TaskController {
 
         var Allbooks = lib.findAll();
         return ResponseEntity.ok(Allbooks);
-
     }
 
     @PostMapping
@@ -42,14 +41,12 @@ public class TaskController {
     public ResponseEntity updateBook(@RequestBody @Valid TaskDTO data, Errors errors) {
         /*  @PathVariable String id        nos parametros*/
 
-
-        Task task = lib.getReferenceById(data.getId());
+        Task task = lib.getReferenceById(data.getTask());
         task.setTask(data.getTask());
         task.setAutor(data.getAutor());
         lib.save(task);
-        return ResponseEntity.ok("tarefa atualizada : " + data.getId() + " - "+ data.getTask() + " - " + data.getAutor());
+        return ResponseEntity.ok("tarefa atualizada : " + data + " - "+ data.getTask() + " - " + data.getAutor());
     }
-
 }
 
 

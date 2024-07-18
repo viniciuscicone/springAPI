@@ -9,7 +9,7 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor(staticName = "build")
 @NoArgsConstructor
-public class TaskDTO extends IdDTO {
+public class TaskDTO {
 
         @NotNull
         @NotBlank
@@ -24,4 +24,5 @@ public class TaskDTO extends IdDTO {
         @Size(min = 1, message = "{nome.Size}")
         @Pattern(regexp = "^[A-Za-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ ]+$",message = "Permitido apenas String")
         String autor;
+
 }

@@ -1,6 +1,7 @@
 package com.aplicacaoException.api.exceptions;
 
 import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
@@ -12,20 +13,24 @@ class ControlerException extends RuntimeException {
 
     @ResponseBody
     @ExceptionHandler(MethodArgumentNotValidException.class)
-    public GenericException handleException(MethodArgumentNotValidException e) {
+    public ResponseEntity handleException(MethodArgumentNotValidException e) {
 
-        GenericException generic = new GenericException(HttpStatus.BAD_REQUEST, e.getFieldError());
+        GenericException generic = new GenericException(
+                HttpStatus.BAD_REQUEST.getReasonPhrase(),
+                e.getFieldError().getDefaultMessage(),
+                "Um problema com este campo: " + e.getFieldError().getField());
 
-        return generic;
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(generic);
     }
 
     @ResponseBody
     @ExceptionHandler(Exception.class)
-    public GenericException2 handleException(Exception e) {
+    public ResponseEntity handleException(Exception e) {
 
-        GenericException2 generic = new GenericException2(HttpStatus.BAD_REQUEST, e.getMessage());
+        GenericException2 generic = new GenericException2(HttpStatus.BAD_REQUEST.getReasonPhrase(), e.getMessage());
 
-        return generic;
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(generic);
+
     }
 }
 
