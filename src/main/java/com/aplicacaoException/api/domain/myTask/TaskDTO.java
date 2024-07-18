@@ -1,26 +1,27 @@
 package com.aplicacaoException.api.domain.myTask;
 
 import jakarta.validation.Valid;
-import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.NotEmpty;
-import jakarta.validation.constraints.NotNull;
-import jakarta.validation.constraints.Size;
+import jakarta.validation.constraints.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
-
-public record TaskDTO (
+@Data
+@AllArgsConstructor(staticName = "build")
+@NoArgsConstructor
+public class TaskDTO extends IdDTO {
 
         @NotNull
         @NotBlank
-        @NotEmpty(message = "{nome.NotEmpty}")
+        @NotEmpty(message = "{nome.NotEmpty} task")
         @Size(min = 1, message = "{nome.Size}")
-        String task,
+        @Pattern(regexp = "^[A-Za-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ ]+$",message = "Permitido apenas String")
+        String task;
         @Valid
         @NotNull
         @NotBlank
-        @NotEmpty(message = "{nome.NotEmpty}")
+        @NotEmpty(message = "{nome.NotEmpty} autor")
         @Size(min = 1, message = "{nome.Size}")
-        String autor
-
-) {
-
+        @Pattern(regexp = "^[A-Za-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ ]+$",message = "Permitido apenas String")
+        String autor;
 }

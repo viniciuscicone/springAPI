@@ -13,23 +13,22 @@ import lombok.*;
 @EqualsAndHashCode(of = "id")
 @Getter
 @Setter
-@AllArgsConstructor
-@NoArgsConstructor
+
 
 @Data
-
+@AllArgsConstructor(staticName = "build")
+@NoArgsConstructor
 public class Task {
 
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     private String id;
-
     private String task;
     private String autor;
 
 
     public Task(TaskDTO data) {
-        this.task = data.task();
-        this.autor = data.autor();
+        this.task = data.task;
+        this.autor = data.autor;
     }
 }
