@@ -34,7 +34,7 @@ class ControlerException extends RuntimeException {
     @ResponseBody
     @ResponseStatus(HttpStatus.BAD_REQUEST)
     public ResponseEntity<ExceptionResponse> resolveException(HttpMessageNotReadableException ex) {
-        String message = "Please provide Request Body in valid JSON format";
+        String message = "Por favor insira um Request Body com JSON valido";
         List<String> messages = new ArrayList<>(1);
         messages.add(message);
         return new ResponseEntity<>(new ExceptionResponse(messages, HttpStatus.BAD_REQUEST.getReasonPhrase(),
