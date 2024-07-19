@@ -28,7 +28,7 @@ public class TaskController {
     @PostMapping
     public ResponseEntity postBook(@RequestBody @Valid TaskDTO task) {
         Task taskNew = new Task(task);
-        /*lib.save(taskNew);*/
+        lib.save(taskNew);
         return ResponseEntity.ok("Task adicionada = " + taskNew);
     }
     @DeleteMapping
