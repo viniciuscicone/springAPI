@@ -4,6 +4,7 @@ package com.aplicacaoException.api.exceptions;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
+import org.springframework.http.HttpInputMessage;
 
 @Getter
 @Setter
@@ -19,7 +20,7 @@ public class GenericException {
 @Getter
 @Setter
 @AllArgsConstructor
-class GenericException2 {
+class GenericException2 extends Throwable {
 
     private String status;
     private
