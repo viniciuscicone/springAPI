@@ -17,13 +17,3 @@ public class GenericException {
 
 }
 
-@Getter
-@Setter
-@AllArgsConstructor
-class GenericException2 extends Throwable {
-
-    private String status;
-    private
-    String message;
-
-}
