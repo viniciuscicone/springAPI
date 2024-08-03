@@ -6,7 +6,8 @@
 <li>Lombok
 <li>FlyWay
 <li>Spring JPA
-<li>Banco de dados MySQL</strong>
+<li>Banco de dados MySQL
+<li>Junit</strong>
 <br/>
 <br/>
 
